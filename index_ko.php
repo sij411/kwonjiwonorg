@@ -38,17 +38,16 @@ $contactsArray = explode("|", $data["contacts"]);
 
     <main>
         <section id="about">
-            <h3><?php
+            <h4><?php
             $aboutTitleArray = explode("\n", $data["aboutTitle"]);
             echo $aboutTitleArray[array_rand($aboutTitleArray)];
-            ?></h3>
+            ?></h4>
             <p><?php echo $data["aboutContent"]; ?></p>
         </section>
 
         <section id="work-projects">
             <h4><b><?php echo $data["workProjectsTitle"]; ?></b></h4>
             <div class="section-grid">
-
                 <div class="section-column">
                     <?php foreach ($workArray as $workItem):
 
@@ -59,7 +58,7 @@ $contactsArray = explode("|", $data["contacts"]);
                         $tagArray = explode(",", $tags);
                         ?>
                         <div class="card">
-                            <h3><?php echo $title; ?></h3>
+                            <p><?php echo $title; ?></p>
                             <p><?php echo $description; ?></p>
                             <div class="tags">
                                 <?php foreach ($tagArray as $tag): ?>
@@ -80,7 +79,7 @@ $contactsArray = explode("|", $data["contacts"]);
                         $tagArray = explode(",", $tags);
                         ?>
                         <div class="card">
-                            <h3><?php echo $title; ?></h3>
+                            <p><?php echo $title; ?></p>
                             <p><?php echo $description; ?></p>
                             <div class="tags">
                                 <?php foreach ($tagArray as $tag): ?>

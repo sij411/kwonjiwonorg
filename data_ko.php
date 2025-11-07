@@ -8,7 +8,7 @@ $projects =
 
 // Work experiences (format: title::description::tags|)
 $work =
-    "소프트웨어 엔지니어::사내 웹 애플리케이션, API, 모델 학습 데이터 파이프라인을 구축했습니다. 데이터 관리 및 모델 평가를 자동화했습니다.::Python, Rust";
+    "소프트웨어 엔지니어 @베링랩(주)::사내 웹 애플리케이션, API, 모델 학습 데이터 파이프라인을 구축했습니다. 데이터 관리 및 모델 평가를 자동화했습니다.::Python, Rust";
 
 // Contact methods (format: type:value:url)
 $contacts =
@@ -16,8 +16,8 @@ $contacts =
 
 // About section content
 $aboutTitle = file_get_contents(__DIR__ . "/emojis.txt");
-$aboutContent =
-    "저는 서울에 기반을 둔 소프트웨어 엔지니어입니다. 문제를 해결하고 개발자 경험을 향상시키기 위해 여러 소프트웨어를 만들었습니다. Arduino/Raspberry Pi tinkering 기술로 미디어 아트 프로젝트에도 참여했습니다. 페디버스, 커뮤니티, 오픈소스, 게임을 좋아합니다. 협업은 언제나 환영합니다.";
+$aboutContent = "안녕하세요, 문제 해결과 DX 향상을 위한 도구 만들기를 즐기는 소프트웨어 엔지니어 권지원입니다. 주로 서울에서 활동하고 있습니다.
+    오픈소스 소프트웨어 프로젝트와 컴퓨팅 장치를 활용한 미디어 아트 프로젝트에도 활발히 참여하고 있습니다. 최근에는 연합우주 관련 개발을 주로 하고 있습니다. 협업은 언제나 환영하니 연락 주세요.";
 $themes =
     "dark:black:white:gray|light:white:black:lightgray|ocean:navy:cyan:teal";
 
