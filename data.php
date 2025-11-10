@@ -7,7 +7,7 @@ $projects =
 
 // Work experiences (format: title::description::tags|)
 $work =
-    "Software Engineer @BeringLab::Built in-house web applications, APIs, and Model training data pipelines. Automated data management and model evaluation.::Python, Rust";
+    "Software Engineer @BeringLab::Built in-house web applications, APIs, and Model training data pipelines. Automated data management and model evaluation.::Python, Rust|Fedify::Worked on cli, new fep implementations, and relay::TypeScript, OSS";
 
 // Contact methods (format: type:value:url)
 $contacts =
@@ -19,7 +19,7 @@ $aboutContent = "Hi, I'm a software engineer Jiwon, enjoying building tools for 
     I've been working on open-source projects and media art projects with computing devices, too. I also have worked on Fediverse projects lately. I'd love to collaborate with, so let's talk :)";
 // Theme colors (format: name:background:text:accent)
 $themes =
-    "dark:black:white:gray|light:white:black:lightgray|ocean:navy:cyan:teal";
+    "dark:black:white:gray|light:white:black:lightgray|ocean:navy:cyan:teal";|
 
 $selectedTagline = null;
 $selectedQuote = null;

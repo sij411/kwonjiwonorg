@@ -8,7 +8,7 @@ $projects =
 
 // Work experiences (format: title::description::tags|)
 $work =
-    "소프트웨어 엔지니어 @베링랩(주)::사내 웹 애플리케이션, API, 모델 학습 데이터 파이프라인을 구축했습니다. 데이터 관리 및 모델 평가를 자동화했습니다.::Python, Rust";
+    "소프트웨어 엔지니어 @베링랩(주)::사내 웹 애플리케이션, API, 모델 학습 데이터 파이프라인을 구축했습니다. 데이터 관리 및 모델 평가를 자동화했습니다.::Python, Rust|Fedify:: CLI, fep 구현, Relay 구현을 작업했습니다.::Typescript, OSS";
 
 // Contact methods (format: type:value:url)
 $contacts =
