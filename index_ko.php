@@ -1,130 +1,89 @@
-<?php
-$data = include "data_ko.php";
-//데이터 폭발
-$nameArray = explode("|", $data["names"]);
-$taglineArray = explode("|", $data["taglines"]);
-$currentTagline = $taglineArray[array_rand($taglineArray)];
-$projectsArray = explode("|", $data["projects"]);
-$workArray = explode("|", $data["work"]);
-$contactsArray = explode("|", $data["contacts"]);
-?>
+<?php $data = include "data_ko.php"; ?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $nameArray[
-        random_int(0, count($nameArray) - 1)
-    ]; ?> - <?php echo $currentTagline; ?></title>
+    <title><?php echo $data["names"]; ?> — <?php echo $data["tagline"]; ?></title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Fixed Header -->
     <header>
         <nav>
-            <div class="profile-container">
-                <div class="profile"></div>
-                <div>
-                    <?php foreach ($nameArray as $index => $name): ?>
-                        <span class="name-variant"><?php echo $name; ?></span>
-                    <?php endforeach; ?>
-                    <div class="tagline"><?php echo $currentTagline; ?></div>
-                </div>
-            </div>
-            <ul>
+            <a href="index_ko.php" class="site-name"><?php echo $data["names"]; ?></a>
+            <ul class="nav-links">
                 <li><a href="index.php">EN</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="about">
-            <h4><?php
-            $aboutTitleArray = explode("\n", $data["aboutTitle"]);
-            echo $aboutTitleArray[array_rand($aboutTitleArray)];
-            ?></h4>
-            <p><?php echo $data["aboutContent"]; ?></p>
-        </section>
-
-        <section id="work-projects">
-            <h4><b><?php echo $data["workProjectsTitle"]; ?></b></h4>
-            <div class="section-grid">
-                <div class="section-column">
-                    <?php foreach ($workArray as $workItem):
-
-                        [$title, $description, $tags] = explode(
-                            "::",
-                            $workItem,
-                        );
-                        $tagArray = explode(",", $tags);
-                        ?>
-                        <div class="card">
-                            <p><?php echo $title; ?></p>
-                            <p><?php echo $description; ?></p>
-                            <div class="tags">
-                                <?php foreach ($tagArray as $tag): ?>
-                                    <span class="tag"><?php echo trim(
-                                        $tag,
-                                    ); ?></span>
-                                <?php endforeach; ?>
+    <div class="content">
+        <div class="main-grid">
+            <!-- Left Column: Projects -->
+            <div class="col-left">
+                <div class="col-name"><?php echo $data["names"]; ?></div>
+                <?php
+                // Group projects by year
+                $grouped = [];
+                foreach ($data["projects"] as $project) {
+                    $year = $project["year"];
+                    $grouped[$year][] = $project;
+                }
+                ?>
+                <?php foreach ($grouped as $year => $projects): ?>
+                    <div class="year-group">
+                        <div class="year-label"><?php echo $year; ?></div>
+                        <?php foreach ($projects as $project): ?>
+                            <div class="project-item">
+                                <div class="project-title" onclick="this.parentElement.classList.toggle('open')">
+                                    <?php echo htmlspecialchars($project["title"]); ?>
+                                </div>
+                                <div class="project-detail">
+                                    <div class="project-detail-inner">
+                                        <div class="project-meta"><?php echo htmlspecialchars($project["medium"]); ?></div>
+                                        <div class="project-meta"><?php echo htmlspecialchars($project["role"]); ?></div>
+                                        <?php if (!empty($project["collaborators"])): ?>
+                                            <div class="project-meta">w/ <?php echo htmlspecialchars($project["collaborators"]); ?></div>
+                                        <?php endif; ?>
+                                        <div class="project-desc"><?php echo htmlspecialchars($project["description"]); ?></div>
+                                        <?php if (file_exists($project["images"][0])): ?>
+                                            <div class="project-image">
+                                                <img src="<?php echo $project["images"][0]; ?>" alt="<?php echo htmlspecialchars($project["title"]); ?>">
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    <?php
-                    endforeach; ?>
-                </div>
-
-                <div class="section-column">
-                    <?php foreach ($projectsArray as $project):
-
-                        [$title, $description, $tags] = explode("::", $project);
-                        $tagArray = explode(",", $tags);
-                        ?>
-                        <div class="card">
-                            <p><?php echo $title; ?></p>
-                            <p><?php echo $description; ?></p>
-                            <div class="tags">
-                                <?php foreach ($tagArray as $tag): ?>
-                                    <span class="tag"><?php echo trim(
-                                        $tag,
-                                    ); ?></span>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-                    <?php
-                    endforeach; ?>
-                </div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endforeach; ?>
             </div>
-        </section>
-    </main>
+
+            <!-- Right Column: Intro -->
+            <div class="col-right">
+                <div class="intro-tagline"><?php echo $data["tagline"]; ?></div>
+                <p class="intro-bio"><?php echo htmlspecialchars($data["bio"]); ?></p>
+                <div class="intro-links">
+                    <a href="mailto:<?php echo $data["email"]; ?>"><?php echo $data["email"]; ?></a>
+                    <?php foreach ($data["social"] as $link): ?>
+                        <a href="<?php echo $link["url"]; ?>"><?php echo htmlspecialchars($link["label"]); ?></a>
+                    <?php endforeach; ?>
+                </div>
+                <div class="intro-copyright">&copy; <?php echo date("Y"); ?> <?php echo $data["names"]; ?></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Footer -->
     <footer>
-        <div class="footer-grid">
-            <div class="footer-left">
-                <ul>
-                    <?php
-                    foreach ($contactsArray as $contact) {
-                        [$type, $value, $url] = explode(":", $contact, 3);
-                        if ($type === "이메일") {
-                            echo "<li>$value</li>";
-                        }
-                    }
-                    echo "<li>{$nameArray[random_int(
-                            0,
-                            count($nameArray) - 1,
-                        )]}</li>";
-                    ?>
-                    <li>
-                        <?php foreach ($contactsArray as $contact) {
-                            [$type, $value, $url] = explode(":", $contact, 3);
-                            if ($type !== "이메일") {
-                                echo '<span class="black-square">';
-                                echo "<a href=\"$url\">$type</a>";
-                                echo "</span>";
-                            }
-                        } ?>
-                    </li>
-                </ul>
-                <div class="footer-quote"></div>
+        <div class="footer-inner">
+            <div class="footer-email"><a href="mailto:<?php echo $data["email"]; ?>"><?php echo $data["email"]; ?></a></div>
+            <div class="footer-social">
+                <?php foreach ($data["social"] as $link): ?>
+                    <a href="<?php echo $link["url"]; ?>"><?php echo htmlspecialchars($link["label"]); ?></a>
+                <?php endforeach; ?>
             </div>
-            <div class="footer-right"></div>
         </div>
     </footer>
 </body>
