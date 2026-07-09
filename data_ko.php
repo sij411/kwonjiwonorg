@@ -1,10 +1,5 @@
 <?php
 $names = "권지원|權祉源|Jiwon Kwon";
-$taglines = "개발자|프로그래머|크리에이터|빌더|해커|엔지니어|기술자";
-
-// Projects with tags (format: title::description::tags|)
-$projects =
-    "개인 웹사이트::제 작업과 관심사를 보여주는 개인 웹사이트입니다::PHP,HTML,CSS";
 
 // Work experiences (format: title::description::tags|)
 $work =
@@ -15,9 +10,8 @@ $contacts =
     "이메일:work@kwonjiwon.org:mailto:work@kwonjiwon.org|Github:sij411:https://github.com/sij411|Hackers' Pub:@z9mb1:https://hackers.pub/@z9mb1";
 
 // About section content
-$aboutTitle = file_get_contents(__DIR__ . "/emojis.txt");
-$aboutContent = "안녕하세요, 문제 해결과 DX 향상을 위한 도구 만들기를 즐기는 소프트웨어 엔지니어 권지원입니다. 주로 서울에서 활동하고 있습니다.
-    오픈소스 소프트웨어 프로젝트와 컴퓨팅 장치를 활용한 미디어 아트 프로젝트에도 활발히 참여하고 있습니다. 최근에는 연합우주 관련 개발을 주로 하고 있습니다. 협업은 언제나 환영하니 연락 주세요.";
+$aboutContent =
+    "안녕하세요, 서울에서 프리랜서 개발자 & 미디어아트 워크샵(HW) 가르치면서 이것저것 만들고 있는 권지원입니다. AP 서버 프레임워크인 Fedify와 AP 기반 디버깅 플랫폼 DrFed를 주로 개발하고 있고 개인적으로는 포터블 AP 서버 프레임워크를 지향하는 Feder를 개발하고 있습니다. 시스템 소프트웨어나 임베디드 쪽도 관심이 많습니다. 귀여운 휴대용 전자기기 만들고 뜯어보는 것도 좋아합니다.";
 $themes =
     "dark:black:white:gray|light:white:black:lightgray|ocean:navy:cyan:teal";
 
@@ -27,18 +21,20 @@ $selectedTheme = 0;
 
 // Work & Projects title
 $workProjectsTitle = "경력 및 프로젝트";
+$photoTitle = "하드웨어 작업";
+$photoDescription =
+    "기기 안의 하드웨어와 소프트웨어를 만들며 엔지니어링과 미디어아트 사이에서 작업하고 있습니다.";
 
 return [
     "names" => $names,
-    "taglines" => $taglines,
-    "projects" => $projects,
     "work" => $work,
     "contacts" => $contacts,
-    "aboutTitle" => $aboutTitle,
     "aboutContent" => $aboutContent,
     "themes" => $themes,
     "selectedTagline" => $selectedTagline,
     "selectedQuote" => $selectedQuote,
     "selectedTheme" => $selectedTheme,
     "workProjectsTitle" => $workProjectsTitle,
+    "photoTitle" => $photoTitle,
+    "photoDescription" => $photoDescription,
 ];

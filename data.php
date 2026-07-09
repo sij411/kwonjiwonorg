@@ -1,40 +1,36 @@
 <?php
 $names = "권지원|權祉源|Jiwon Kwon";
-$taglines = "Developer|Programmer|Creator|Builder|Hacker|Engineer|Technician";
-// Projects with tags (format: title::description::tags|)
-$projects =
-    "Personal Webpage::A personal website showcasing my work and interests::PHP,HTML,CSS";
-
 // Work experiences (format: title::description::tags|)
 $work =
-    "Software Engineer @BeringLab::Built in-house web applications, APIs, and Model training data pipelines. Automated data management and model evaluation.::Python, Rust|Fedify::Worked on cli, new fep implementations, and relay::TypeScript, OSS";
+    "<a href=\"https://fedify.dev/\">Fedify</a> - Co-maintainer::Co-maintainer of Fedify, a TypeScript ActivityPub framework. Contributed to CLI tooling, FEP implementations, relay infrastructure, interoperability, and ongoing project maintenance.::|<a href=\"https://github.com/fedify-org/feder\">Feder</a> - Maintainer::Maintainer of Feder, a Rust ActivityPub framework exploring a portable core with multiple runtimes. Design protocol models, sans-I/O architecture, runtime abstractions, and Linux-to-embedded Fediverse experiments.::|<a href=\"https://github.com/sij411/drfed\">DrFed</a> - Co-maintainer::Co-maintainer of DrFed, a developer tool for experimenting with and inspecting Fediverse/ActivityPub systems. Work includes project design, Fedify-based tooling, protocol debugging workflows, and developer experience.::|Software Engineer Intern @BeringLab::Built in-house web applications, APIs, and model training data pipelines. Automated data management and model evaluation.::";
 
 // Contact methods (format: type:value:url)
 $contacts =
-    "Email:work@kwonjiwon.org:mailto:work@kwonjiwon.org|Github:sij411:https://github.com/sij411|Hackers' Pub:@z9mb1:https://hackers.pub/@z9mb1";
+    "Email:work@kwonjiwon.org:mailto:work@kwonjiwon.org|Github:sij411:https://github.com/sij411|Hackers' Pub:@z9mb1:https://hackers.pub/@z9mb1|Codeberg:z9mb1:https://codeberg.org/z9mb1";
 
 // About section content
-$aboutTitle = file_get_contents(__DIR__ . "/assets/emojis.txt");
-$aboutContent = "Hi, I'm a software engineer Jiwon, enjoying building tools for solutions and DX enhancements. @Seoul.
-    I've been working on open-source projects and media art projects with computing devices, too. I also have worked on Fediverse projects lately. I'd love to collaborate with, so let's talk :)";
+
+$aboutContent = "Hi, I’m Jiwon. I do software engineering, tinker with hardware, and teach media art hardware workshops in Seoul.
+I’ve been working on Fedify, an ActivityPub server framework; DrFed, a debugging platform based on ActivityPub; and Feder, a portable ActivityPub server framework.
+I like systems software and embedded programming, and I also love making small machines.  ";
 // Theme colors (format: name:background:text:accent)
 $themes =
-    "dark:black:white:gray|light:white:black:lightgray|ocean:navy:cyan:teal";|
+    "dark:black:white:gray|light:white:black:lightgray|ocean:navy:cyan:teal";
 
 $selectedTagline = null;
 $selectedQuote = null;
 $selectedTheme = 0;
+$photoDescription =
+    "Built hardware and software inside devices, working across engineering and media art.";
 
 return [
     "names" => $names,
-    "taglines" => $taglines,
-    "projects" => $projects,
     "work" => $work,
     "contacts" => $contacts,
-    "aboutTitle" => $aboutTitle,
     "aboutContent" => $aboutContent,
     "themes" => $themes,
     "selectedTagline" => $selectedTagline,
     "selectedQuote" => $selectedQuote,
     "selectedTheme" => $selectedTheme,
+    "photoDescription" => $photoDescription,
 ];
