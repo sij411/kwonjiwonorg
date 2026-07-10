@@ -2,11 +2,11 @@
 $names = "권지원|權祉源|Jiwon Kwon";
 // Work experiences (format: title::description::tags|)
 $work =
-    "<a href=\"https://fedify.dev/\">Fedify</a> - Co-maintainer::Co-maintainer of Fedify, a TypeScript ActivityPub framework. Contributed to CLI tooling, FEP implementations, relay infrastructure, interoperability, and ongoing project maintenance.::|<a href=\"https://github.com/fedify-org/feder\">Feder</a> - Maintainer::Maintainer of Feder, a Rust ActivityPub framework exploring a portable core with multiple runtimes. Design protocol models, sans-I/O architecture, runtime abstractions, and Linux-to-embedded Fediverse experiments.::|<a href=\"https://github.com/sij411/drfed\">DrFed</a> - Co-maintainer::Co-maintainer of DrFed, a developer tool for experimenting with and inspecting Fediverse/ActivityPub systems. Work includes project design, Fedify-based tooling, protocol debugging workflows, and developer experience.::|Software Engineer Intern @BeringLab::Built in-house web applications, APIs, and model training data pipelines. Automated data management and model evaluation.::";
+    "<a href=\"https://fedify.dev/\">Fedify</a> - Co-maintainer::Co-maintainer of Fedify, a TypeScript ActivityPub framework. Contributed to CLI tooling, FEP implementations, relay infrastructure, interoperability, and ongoing project maintenance.::|<a href=\"https://github.com/fedify-dev/feder\">Feder</a> - Maintainer::Maintainer of Feder, a Rust ActivityPub framework exploring a portable core with multiple runtimes. Design protocol models, sans-I/O architecture, runtime abstractions, and Linux-to-embedded Fediverse experiments.::|<a href=\"https://github.com/sij411/drfed\">DrFed</a> - Co-maintainer::Co-maintainer of DrFed, a developer tool for experimenting with and inspecting Fediverse/ActivityPub systems. Work includes project design, Fedify-based tooling, protocol debugging workflows, and developer experience.::|Software Engineer Intern @BeringLab::Built in-house web applications, APIs, and model training data pipelines. Automated data management and model evaluation.::";
 
 // Contact methods (format: type:value:url)
 $contacts =
-    "Email:work@kwonjiwon.org:mailto:work@kwonjiwon.org|Github:sij411:https://github.com/sij411|Hackers' Pub:@z9mb1:https://hackers.pub/@z9mb1|Codeberg:z9mb1:https://codeberg.org/z9mb1";
+    "Email:work@kwonjiwon.org:mailto:work@kwonjiwon.org|GitHub:sij411:https://github.com/sij411|Hackers' Pub:@z9mb1:https://hackers.pub/@z9mb1|Codeberg:z9mb1:https://codeberg.org/z9mb1";
 
 // About section content
 
