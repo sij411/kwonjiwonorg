@@ -160,14 +160,6 @@ section {
     padding: 1rem 1.5rem;
 }
 
-.photo-copy h5 {
-    font-size: 1rem;
-}
-
-.photo-copy p {
-    margin-top: 0.5rem;
-}
-
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

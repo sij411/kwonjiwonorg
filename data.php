@@ -20,8 +20,11 @@ $themes =
 $selectedTagline = null;
 $selectedQuote = null;
 $selectedTheme = 0;
+$workProjectsTitle = "Works & Projects";
 $photoDescription =
     "Built hardware and software inside devices, working across engineering and media art.";
+$photoCredit =
+    "Art works made in collaboration with @<a href=\"https://www.instagram.com/thingworkshop/\">thingworkshop</a>.";
 
 return [
     "names" => $names,
@@ -32,5 +35,7 @@ return [
     "selectedTagline" => $selectedTagline,
     "selectedQuote" => $selectedQuote,
     "selectedTheme" => $selectedTheme,
+    "workProjectsTitle" => $workProjectsTitle,
     "photoDescription" => $photoDescription,
+    "photoCredit" => $photoCredit,
 ];

@@ -40,10 +40,10 @@ $contactItems = array_map(
 $pageTitleName = $nameArray[random_int(0, count($nameArray) - 1)];
 $footerName = $nameArray[random_int(0, count($nameArray) - 1)];
 $workProjectsTitle = $data["workProjectsTitle"] ?? "Works & Projects";
-$photoTitle = $data["photoTitle"] ?? "Hardware Works";
 $photoDescription =
     $data["photoDescription"] ??
     "Built hardware and software inside devices, working across engineering and media art.";
+$photoCredit = $data["photoCredit"] ?? null;
 $emailType = $locale === "ko" ? "이메일" : "Email";
 $toggleLocale = $locale === "ko" ? "en" : "ko";
 $toggleLabel = strtoupper($toggleLocale);
@@ -125,6 +125,9 @@ function photoAltText(string $photo): string
                         <div class="photo-block">
                             <div class="photo-copy">
                                 <p><?php echo $photoDescription; ?></p>
+                                <?php if ($photoCredit !== null): ?>
+                                    <p><?php echo $photoCredit; ?></p>
+                                <?php endif; ?>
                             </div>
                             <div class="photo-grid">
                                 <?php foreach ($photos as $photo):
